@@ -1,0 +1,15 @@
+# Allowlist: ignore everything, then explicitly un-ignore what should be tracked.
+/*
+
+!/.github/
+!/.gitignore
+!/LICENSE
+!/README.md
+!/build.gradle
+!/gradle/
+!/gradle.properties
+!/gradlew
+!/gradlew.bat
+!/settings.gradle
+!/src/
+!/CHANGELOG.md

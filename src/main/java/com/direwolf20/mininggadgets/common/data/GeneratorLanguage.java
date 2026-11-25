@@ -1,0 +1,129 @@
+package com.direwolf20.mininggadgets.common.data;
+
+import com.direwolf20.mininggadgets.common.MiningGadgets;
+import com.direwolf20.mininggadgets.setup.Registration;
+import net.minecraft.data.PackOutput;
+import net.neoforged.neoforge.common.data.LanguageProvider;
+
+
+public class GeneratorLanguage extends LanguageProvider {
+    public GeneratorLanguage(PackOutput output) {
+        super(output, MiningGadgets.MOD_ID, "en_us");
+    }
+
+    @Override
+    protected void addTranslations() {
+        add("itemGroup.mininggadgets", "Mining Gadgets");
+        addItem(Registration.MININGGADGET, "Mining Gadget MK3");
+        addItem(Registration.MININGGADGET_SIMPLE, "Mining Gadget MK1");
+        addItem(Registration.MININGGADGET_FANCY, "Mining Gadget MK2");
+        addItem(Registration.UPGRADE_EMPTY, "Blank Upgrade Module");
+        addItem(Registration.MODIFICATION_TABLE_ITEM, "Modification Table");
+
+        // This should always match the start of below upgrade names. I use this
+        // to actively replace the start of the word. (it's an exact search so this should
+        // still work nicely in other languages. It's rare we need the Upgrade: prefix
+        // for most of the gui in the mod so it's purely a gui hack.
+        addPrefixed("upgrade.replacement", "Upgrade: ");
+        addItem(Registration.SILK, "Upgrade: Silk touch");
+        addItem(Registration.FREEZING, "Upgrade: Freezing");
+        addItem(Registration.LIGHT_PLACER, "Upgrade: Light Placer");
+        addItem(Registration.MAGNET, "Upgrade: Magnet");
+        addItem(Registration.SIZE_1, "Upgrade: 3x3");
+        addItem(Registration.SIZE_2, "Upgrade: 5x5");
+        addItem(Registration.SIZE_3, "Upgrade: 7x7");
+//        addItem(ModItems.PAVER, "Upgrade: Paver");
+        addItem(Registration.VOID_JUNK, "Upgrade: Void Junk");
+        addItem(Registration.FORTUNE_1, "Upgrade: Fortune, Tier 1");
+        addItem(Registration.FORTUNE_2, "Upgrade: Fortune, Tier 2");
+        addItem(Registration.FORTUNE_3, "Upgrade: Fortune, Tier 3");
+        addItem(Registration.RANGE_1, "Upgrade: Range, Tier 1");
+        addItem(Registration.RANGE_2, "Upgrade: Range, Tier 2");
+        addItem(Registration.RANGE_3, "Upgrade: Range, Tier 3");
+        addItem(Registration.EFFICIENCY_1, "Upgrade: Efficiency, Tier 1");
+        addItem(Registration.EFFICIENCY_2, "Upgrade: Efficiency, Tier 2");
+        addItem(Registration.EFFICIENCY_3, "Upgrade: Efficiency, Tier 3");
+        addItem(Registration.EFFICIENCY_4, "Upgrade: Efficiency, Tier 4");
+        addItem(Registration.EFFICIENCY_5, "Upgrade: Efficiency, Tier 5");
+        addItem(Registration.BATTERY_1, "Upgrade: Battery, Tier 1");
+        addItem(Registration.BATTERY_2, "Upgrade: Battery, Tier 2");
+        addItem(Registration.BATTERY_3, "Upgrade: Battery, Tier 3");
+        addItem(Registration.BATTERY_CREATIVE, "Upgrade: Creative Battery");
+
+        // Upgrade tooltips :D
+        add("tooltop.mininggadgets.empty", "Used to craft other upgrades");
+        add("tooltop.mininggadgets.silk", "Applies the silk touch enchant to the Mining Gadget");
+        add("tooltop.mininggadgets.void_junk", "Voids blocks! (adds filtering too)");
+        add("tooltop.mininggadgets.magnet", "Deconstructs blocks right into your inventory");
+        add("tooltop.mininggadgets.size", "Allows to mine with a larger mining radius");
+        add("tooltop.mininggadgets.light_placer", "Places torches whenever the surroundings light level is lower than 8");
+        add("tooltop.mininggadgets.freezing", "Freezes water and stops lava in it's place!");
+        add("tooltop.mininggadgets.fortune", "Applies fortune to the Mining Gadget");
+        add("tooltop.mininggadgets.battery", "Upgrades the internal capacitors");
+        add("tooltop.mininggadgets.range", "Extends the range by 5 with each tier");
+        add("tooltop.mininggadgets.efficiency", "Applies efficiency to the Mining Gadget");
+        add("tooltop.mininggadgets.paver", "Creates a path for you as you mine");
+
+        // Blocks
+        addBlock(Registration.MINERS_LIGHT, "Miner's Light");
+        addBlock(Registration.RENDER_BLOCK, "Render Block (Don't use)");
+        addBlock(Registration.MODIFICATION_TABLE, "Modification Table");
+
+        // Fixes oneProbe? Weird
+        add("block.mininggadgets.renderblock.name", "What ever it wants to be!");
+
+        addPrefixed("gadget.range_change", "Range Change: %1$d x %1$d");
+        addPrefixed("gadget.energy", "Energy: %d/%d");
+
+        // Tooltips?
+        addPrefixed("tooltip.single.insert", "Insert");
+        addPrefixed("tooltip.single.filters", "Filters");
+        addPrefixed("tooltip.item.show_upgrades","Hold shift to show upgrades");
+        addPrefixed("tooltip.item.upgrades", "Current Upgrades:");
+        addPrefixed("tooltip.item.upgrade_cost", "Upgrade Cost: %1$d");
+        addPrefixed("tooltip.item.use_cost", "+%1$d FE per use");
+        addPrefixed("tooltip.item.battery_boost", "Battery Boost: %1$d");
+        addPrefixed("tooltip.item.break_cost", "Per Block Cost: %1$d");
+
+        addPrefixed("text.modification_table", "Modification Table");
+        addPrefixed("text.empty_table_helper", "Shift click to insert from your slots\nor drop upgrade onto this screen.\n\nClick upgrade to remove.");
+        addPrefixed("text.open_gui", "Open Mining Gadget Settings");
+
+        // Screen Buttons and text
+        addPrefixed("tooltip.screen.size", "Size: %1$d x %1$d");
+        addPrefixed("tooltip.screen.sizemode.auto", "Automatic");
+        addPrefixed("tooltip.screen.sizemode.normal", "Normal Mode");
+        addPrefixed("tooltip.screen.sizemode.pathway", "2 Down (Pathways)");
+        addPrefixed("tooltip.screen.range", "Range");
+        addPrefixed("tooltip.screen.visuals_menu", "Edit Visuals");
+        addPrefixed("tooltip.screen.mining_gadget", "Gadget Settings");
+        addPrefixed("tooltip.screen.shrink", "Shrink Blocks");
+        addPrefixed("tooltip.screen.fade", "Fade Blocks");
+        addPrefixed("tooltip.screen.red", "Red");
+        addPrefixed("tooltip.screen.green", "Green");
+        addPrefixed("tooltip.screen.blue", "Blue");
+        addPrefixed("tooltip.screen.block_break_style", "Breaking Style");
+        addPrefixed("tooltip.screen.outer_color", "Outer glow color");
+        addPrefixed("tooltip.screen.inner_color", "Inner beam color");
+        addPrefixed("tooltip.screen.beam_preview", "Beam preview");
+        addPrefixed("tooltip.screen.visual_settings", "Visual Settings");
+        addPrefixed("tooltip.screen.toggle_upgrades", "Toggle Upgrades");
+        addPrefixed("tooltip.screen.edit_filters", "Edit Filters");
+        addPrefixed("tooltip.screen.no_upgrades", "No Upgrades available");
+        addPrefixed("tooltip.screen.whitelist", "Keep List");
+        addPrefixed("tooltip.screen.blacklist", "Destroy List");
+        addPrefixed("tooltip.screen.precision_mode", "Precision Mode: %1$d");
+        addPrefixed("tooltip.screen.volume", "Volume");
+        addPrefixed("tooltip.screen.freeze_delay", "Freeze Delay");
+        addPrefixed("tooltip.screen.ticks", "ticks");
+        addPrefixed("tooltip.screen.delay_explain", "Controls how often a freeze particle is spawned\nby default it is one particle every tick, to reduce\nthe amount of particles add more delay");
+    }
+
+    /**
+     * Very simply, prefixes all the keys with the mod_id.{key} instead of
+     * having to input it manually
+     */
+    private void addPrefixed(String key, String text) {
+        add(String.format("%s.%s", MiningGadgets.MOD_ID, key), text);
+    }
+}
